@@ -1,4 +1,5 @@
 @Metadata.layer: #CORE
+
 annotate view ZC_ET1_TAB_PASENGER
     with 
 {

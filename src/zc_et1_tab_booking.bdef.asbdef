@@ -1,0 +1,21 @@
+projection;
+strict;
+
+define behavior for ZC_ET1_TAB_BOOKING alias Booking
+use etag
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _Passenger { create; }
+}
+
+define behavior for ZC_ET1_TAB_PASENGER alias Passenger
+use etag
+{
+  use update;
+  use delete;
+
+  use association _Booking;
+}
