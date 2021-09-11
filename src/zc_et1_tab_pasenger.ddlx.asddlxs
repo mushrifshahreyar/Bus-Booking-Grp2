@@ -1,0 +1,32 @@
+@Metadata.layer: #CORE
+annotate view ZC_ET1_TAB_PASENGER
+    with 
+{
+    @UI.hidden: true
+    PassengerUuid;
+    @UI.hidden: true
+    BookingUuid;
+    @UI.lineItem: [{position: 10 }]
+    PassengerId;
+    @UI.lineItem: [{position: 20 }]
+    FirstName;
+    @UI.lineItem: [{position: 30 }]
+    LastName;
+    @UI.lineItem: [{position: 40 }]
+    Age;
+    @UI.lineItem: [{position: 50 }]
+    ContactNumber;
+    @UI.lineItem: [{position: 60 }]
+    PassengerStatus;
+    @UI.lineItem: [{position: 70 }]
+    WaitlistNumber;
+    @UI.lineItem: [{position: 80 }]
+    CreatedBy;
+    @UI.lineItem: [{position: 90 }]
+    CreatedAt;
+    @UI.lineItem: [{position: 100 }]
+    LastChangedBy;
+    @UI.lineItem: [{position: 110 }]
+    LastChangedAt;
+    
+}

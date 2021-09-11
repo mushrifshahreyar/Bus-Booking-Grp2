@@ -1,0 +1,32 @@
+@Metadata.layer: #CORE
+annotate view ZC_ET1_TAB_BOOKING
+    with 
+{
+    @UI.hidden: true
+    BookingUuid;
+    @UI: {  lineItem:       [ { position: 10 } ]}
+    BookingId;
+    @UI: {  lineItem:       [ { position: 20 } ]}
+    BusId;
+    @UI: {  lineItem:       [ { position: 30 } ]}
+    BusName;
+    @UI: {  lineItem:       [ { position: 40 } ]}
+    StartPoint;
+    @UI: {  lineItem:       [ { position: 50 } ]}
+    EndPoint;
+    @UI: {  lineItem:       [ { position: 60 } ]}
+    StartDate;
+    @UI: {  lineItem:       [ { position: 70 } ]}
+    EndDate;
+    @UI: {  lineItem:       [ { position: 80 } ]}
+    BookingStatus;
+    @UI: {  lineItem:       [ { position: 90 } ]}
+    CreatedBy;
+    @UI: {  lineItem:       [ { position: 100 } ]}
+    CreatedAt;
+    @UI: {  lineItem:       [ { position: 110 } ]}
+    LastChangedBy;
+    @UI: {  lineItem:       [ { position: 120 } ]}
+    LastChangedAt;
+  
+}
