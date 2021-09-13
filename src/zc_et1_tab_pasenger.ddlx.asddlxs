@@ -1,5 +1,7 @@
 @Metadata.layer: #CORE
-
+@UI: {
+  headerInfo: { 
+                typeNamePlural: 'Passengers'}}
 annotate view ZC_ET1_TAB_PASENGER
     with 
 {
@@ -7,11 +9,13 @@ annotate view ZC_ET1_TAB_PASENGER
     PassengerUuid;
     @UI.hidden: true
     BookingUuid;
-    @UI.lineItem: [{position: 10 }]
+   @UI: {  lineItem:       [ { position: 10 } ] }
     PassengerId;
-    @UI.lineItem: [{position: 20 }]
+    @UI: {  lineItem:       [ { position: 20 } ],
+            selectionField: [ { position: 10 } ] }
     FirstName;
-    @UI.lineItem: [{position: 30 }]
+    @UI: {  lineItem:       [ { position: 30 } ],
+            selectionField: [ { position: 20 } ] }
     LastName;
     @UI.lineItem: [{position: 40 }]
     Age;
@@ -22,12 +26,16 @@ annotate view ZC_ET1_TAB_PASENGER
     @UI.lineItem: [{position: 70 }]
     WaitlistNumber;
     @UI.lineItem: [{position: 80 }]
+    @UI.hidden: true
     CreatedBy;
     @UI.lineItem: [{position: 90 }]
+    @UI.hidden: true
     CreatedAt;
     @UI.lineItem: [{position: 100 }]
+    @UI.hidden: true
     LastChangedBy;
     @UI.lineItem: [{position: 110 }]
+    @UI.hidden: true
     LastChangedAt;
     
 }

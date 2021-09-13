@@ -1,5 +1,5 @@
 projection;
-strict;
+//strict;
 
 define behavior for ZC_ET1_TAB_BOOKING alias Booking
 use etag

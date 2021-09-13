@@ -1,0 +1,6 @@
+@EndUserText.label: 'AMRITA SERV DEF'
+define service ZUI_ET1_BOOKING1 {
+  expose ZC_ET1_TAB_BOOKING;
+  expose ZC_ET1_TAB_PASENGER;
+  expose ZI_ET1_TAB_BOOKING;
+}

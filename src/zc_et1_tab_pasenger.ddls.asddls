@@ -9,20 +9,30 @@ define view entity ZC_ET1_TAB_PASENGER as projection on ZI_ET1_TAB_PASENGER {
     @EndUserText.label: 'Passenger ID'
     PassengerId,
     @EndUserText.label: 'First Name'
+    @Search.defaultSearchElement: true
     FirstName,
     @EndUserText.label: 'Last Name'
+    @Search.defaultSearchElement: true
     LastName,
     @EndUserText.label: 'Age'
+    @Search.defaultSearchElement: true
     Age,
     @EndUserText.label: 'Contact Number'
+    @Search.defaultSearchElement: true
     ContactNumber,
     @EndUserText.label: 'Passenger Status'
+    @Search.defaultSearchElement: true
     PassengerStatus,
     @EndUserText.label: 'Waitlist Number'
+    @Search.defaultSearchElement: true
     WaitlistNumber,
-    //CreatedBy,
-    //CreatedAt,
-    //LastChangedBy,
+    @EndUserText.label: 'Created By'
+    CreatedBy,
+    @EndUserText.label: 'Created At'
+    CreatedAt,
+    @EndUserText.label: 'Last Changed By'
+    LastChangedBy,
+    @EndUserText.label: 'Last Changed At'
     LastChangedAt,
     /* Associations */
     _Booking: redirected to parent ZC_ET1_TAB_BOOKING

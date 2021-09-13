@@ -1,6 +1,6 @@
 @Metadata.layer: #CORE
 @UI: {
-  headerInfo: { typeName: 'Booking',
+  headerInfo: { typeName: 'Passenger Details',
                 typeNamePlural: 'Bookings',
                 title: { type: #STANDARD, label: 'Booking', value: 'BookingId' },
                 description:{ value: 'BookingStatus' } },
@@ -46,17 +46,17 @@ annotate view ZC_ET1_TAB_BOOKING
             selectionField: [ { position: 10 } ] }
     BookingId;
     @UI: {  lineItem:       [ { position: 20 } ]}
-    @UI.dataPoint: { targetValueElement: 'BusName', title: 'Bus Name' }
+    //@UI.dataPoint: { targetValueElement: 'BusName', title: 'Bus Name' }
     @UI.identification : [ { position:10 } ]
     BusName;
     @UI: {  lineItem:       [ { position: 30 } ],
             selectionField: [ { position: 20 } ] }
-    @UI.dataPoint: { targetValueElement: 'StartPoint', title: 'From' } 
+    //@UI.dataPoint: { targetValueElement: 'StartPoint', title: 'From' } 
     @UI.identification : [ { position:20 } ]       
     StartPoint;
     @UI: {  lineItem:       [ { position: 40 } ],
             selectionField: [ { position: 30 } ] }
-    @UI.dataPoint: { targetValueElement: 'EndPoint', title: 'To' }
+    //@UI.dataPoint: { targetValueElement: 'EndPoint', title: 'To' }
     @UI.identification : [ { position:30 } ]
     EndPoint;
     @UI: {  lineItem:       [ { position: 50 } ],
@@ -67,21 +67,23 @@ annotate view ZC_ET1_TAB_BOOKING
             selectionField: [ { position: 50 } ] }
     @UI.identification : [ { position:50 } ]        
     EndDate;
-    @UI: {  lineItem:       [ { position: 70 } ],
+    @UI: {  lineItem:       [ { position: 70, criticality: 'Criticality' } ],
             selectionField: [ { position: 60 } ] }
     BookingStatus;
-    @UI: {  lineItem:       [ { position: 80 } ],
+    @UI: {  lineItem:       [ { position: 80} ], 
             fieldGroup: [{qualifier: 'AdminData', position: 10, importance: #HIGH }]}
+   
     CreatedBy;
     @UI: {  lineItem:       [ { position: 90 } ],
             fieldGroup: [{qualifier: 'AdminData', position: 20, importance: #HIGH }]}
+    
     CreatedAt;
     @UI: {  lineItem:       [ { position: 100 } ],
             fieldGroup: [{qualifier: 'AdminData', position: 30, importance: #HIGH }]}
+   
     LastChangedBy;
     @UI: {  lineItem:       [ { position: 110 } ],
             fieldGroup: [{qualifier: 'AdminData', position: 40, importance: #HIGH }]}
+   
     LastChangedAt;
-    
-  
 }

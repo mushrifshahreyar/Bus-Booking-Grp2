@@ -1,6 +1,6 @@
 @AccessControl.authorizationCheck: #CHECK
 @EndUserText.label: 'Interface view for passenger'
-define view entity ZI_ET1_TAB_PASENGER as select from zet1_tab_pasengr 
+define view entity ZI_ET1_TAB_PASENGER as select from zet1_tab_pasengr as Passenger
 association to parent ZI_ET1_TAB_BOOKING as _Booking on $projection.BookingUuid = _Booking.BookingUuid
 {
     key passenger_uuid as PassengerUuid,
