@@ -48,6 +48,7 @@ annotate view ZC_ET1_TAB_BOOKING
     @UI: {  lineItem:       [ { position: 20 } ]}
     //@UI.dataPoint: { targetValueElement: 'BusName', title: 'Bus Name' }
     @UI.identification : [ { position:10 } ]
+     @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_ET1_TAB_BUS', element: 'BusName'} }]
     BusName;
     @UI: {  lineItem:       [ { position: 30 } ],
             selectionField: [ { position: 20 } ] }

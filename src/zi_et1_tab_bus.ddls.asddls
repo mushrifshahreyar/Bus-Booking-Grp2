@@ -1,4 +1,4 @@
-@AccessControl.authorizationCheck: #CHECK
+@AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Interface view for bus'
 
 define view entity ZI_ET1_TAB_BUS as select from zet1_tab_bus as Bus {

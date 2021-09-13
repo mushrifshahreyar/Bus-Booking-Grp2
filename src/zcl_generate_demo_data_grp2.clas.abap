@@ -36,7 +36,7 @@ created_at = '20210922184530' last_changed_by = 'ALIFIYA' last_changed_at = '202
 
 *   fill internal travel table (itab1)
     itab1 = VALUE #(
-      ( passenger_uuid = '02D5290E594C1EDA93815057FD949926' booking_uuid = '02D5290E594C1EDA93815057FD949924' passenger_id = '0601' first_name = 'Alifiya' last_name = 'Hussain' age = '23' contact_number = '9876543299' passenger_status = 'Booked'
+      ( passenger_uuid = '02D5290E594C1EDA93815057FD949926' booking_uuid = '02D5290E594C1EDA93815057FD949924' passenger_id = '0601' first_name = 'Alifiya' last_name = 'Hussain' age = '23' contact_number = '9876543299' passenger_status = 'Confirmed'
 waitlist_number = '0'
 created_by = 'ALIFIYA' created_at = '20210922184530' last_changed_by = 'ALIFIYA' last_changed_at = '20210922184530' )
 
@@ -46,7 +46,7 @@ created_by = 'ALIFIYA' created_at = '20210922184530' last_changed_by = 'ALIFIYA'
 
 *   fill internal travel table (itab2)
     itab2 = VALUE #(
-      ( bus_uuid = '02D5290E594C1EDA90815057FD949930' bus_id = '0701' bus_name = 'Parveen Travels' bus_capacity = '30' start_point = 'Mumbai' end_point = 'bangalore' start_date = '20210921184530' end_date = '20210922184530' seats_left = '10'
+      ( bus_uuid = '02D5290E594C1EDA90815057FD949930' bus_id = '0701' bus_name = 'Parveen Travels' bus_capacity = '30' start_point = 'Mumbai' end_point = 'Bangalore' start_date = '20210921184530' end_date = '20210922184530' seats_left = '10'
 total_waitlist = '0' )
 
     ).

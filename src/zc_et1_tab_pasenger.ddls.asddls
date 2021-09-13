@@ -23,6 +23,7 @@ define view entity ZC_ET1_TAB_PASENGER as projection on ZI_ET1_TAB_PASENGER {
     @EndUserText.label: 'Passenger Status'
     @Search.defaultSearchElement: true
     PassengerStatus,
+    Criticality,
     @EndUserText.label: 'Waitlist Number'
     @Search.defaultSearchElement: true
     WaitlistNumber,

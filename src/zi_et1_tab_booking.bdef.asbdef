@@ -11,6 +11,7 @@ etag master LastChangedAt
   delete;
   association _Passenger { create; }
   field ( numbering : managed, readonly ) BookingUuid;
+
    mapping for zet1_tab_booking
   {
     BookingUuid         = booking_uuid;
@@ -30,6 +31,7 @@ lock dependent by _Booking
 //authorization dependent by _Booking
 etag master LastChangedAt
 {
+
   update;
   delete;
   field ( readonly ) BookingUuid;
@@ -37,15 +39,15 @@ etag master LastChangedAt
   field ( numbering : managed, readonly ) PassengerUuid;
    mapping for zet1_tab_pasengr
   {
-    PassengerUuid       = passenger_uuid;
+    PassengerUuid      = passenger_uuid;
     BookingUuid        = booking_uuid;
-    PassengerId          = passenger_id;
-    FirstName        = first_name;
-    LastName         = last_name;
-    Age          =  age;
-    ContactNumber       = contact_number;
-    PassengerStatus         = passenger_status;
-    WaitlistNumber       = waitlist_number;
+    PassengerId        = passenger_id;
+    FirstName          = first_name;
+    LastName           = last_name;
+    Age                =  age;
+    ContactNumber      = contact_number;
+    PassengerStatus    = passenger_status;
+    WaitlistNumber     = waitlist_number;
     CreatedBy          = created_by;
     CreatedAt          = created_at;
     LastChangedBy      = last_changed_by;

@@ -1,4 +1,4 @@
-@AccessControl.authorizationCheck: #CHECK
+@AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Interface view for passenger'
 define view entity ZI_ET1_TAB_PASENGER as select from zet1_tab_pasengr as Passenger
 association to parent ZI_ET1_TAB_BOOKING as _Booking on $projection.BookingUuid = _Booking.BookingUuid
@@ -11,6 +11,12 @@ association to parent ZI_ET1_TAB_BOOKING as _Booking on $projection.BookingUuid 
     age as Age,
     contact_number as ContactNumber,
     passenger_status as PassengerStatus,
+     case passenger_status
+           when 'Confirmed' then 3 
+           when 'In waitlist' then 0   
+           when 'Cancelled' then 1       
+          else 0
+      end as Criticality,
     waitlist_number as WaitlistNumber,
     @Semantics.user.createdBy: true
     created_by as CreatedBy,

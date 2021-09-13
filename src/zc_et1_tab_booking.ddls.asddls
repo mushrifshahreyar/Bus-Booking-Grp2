@@ -1,5 +1,5 @@
 @EndUserText.label: 'Projection view for booking'
-@AccessControl.authorizationCheck: #CHECK
+@AccessControl.authorizationCheck: #NOT_REQUIRED
 @Search.searchable: true
 @Metadata.allowExtensions: true
 @ObjectModel.semanticKey: ['BookingId']
@@ -16,30 +16,34 @@ define root view entity ZC_ET1_TAB_BOOKING
       BusId,
       @Search.defaultSearchElement: true
       @EndUserText.label: 'Bus Name'
-      @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_ET1_TAB_BUS', element: 'BusName'} }]
-      _Bus.BusName    as BusName,
+      @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_ET1_TAB_BUS', element: 'BusName'}, 
+      additionalBinding: [ { localElement: 'BusId',    element: 'BusId' },{ localElement: 'StartPoint',    element: 'StartPoint' },
+                                                                 { localElement: 'EndPoint',   element: 'EndPoint',   usage: #RESULT},
+                                                                 { localElement: 'StartDate',  element: 'StartDate',        usage: #RESULT },
+                                                                 { localElement: 'EndDate', element: 'EndDate', usage: #RESULT } ] }]
+      BusName,
       @EndUserText.label: 'From'
       @Search.defaultSearchElement: true
       @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_ET1_TAB_BUS', element: 'StartPoint'} }]
-      _Bus.StartPoint as StartPoint,
+      StartPoint,
       @EndUserText.label: 'To'
       @Search.defaultSearchElement: true
       @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_ET1_TAB_BUS', element: 'EndPoint'} }]
-      _Bus.EndPoint as EndPoint,
+     EndPoint,
       @Search.defaultSearchElement: true
       @EndUserText.label: 'Start Date'
       @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_ET1_TAB_BUS', element: 'StartDate'} }]
-      _Bus.StartDate as StartDate,
+     StartDate,
       @Search.defaultSearchElement: true
       @EndUserText.label: 'End Date'
       @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_ET1_TAB_BUS', element: 'EndDate'} }]
-      _Bus.EndDate as EndDate,
+      EndDate,
       @EndUserText.label: 'Booking Status'
       @Search.defaultSearchElement: true
       BookingStatus,
+      Criticality,
       @EndUserText.label: 'Created By'
       @Search.defaultSearchElement: true
-      Criticality,
       CreatedBy,
       @EndUserText.label: 'Created At'
       @Search.defaultSearchElement: true
