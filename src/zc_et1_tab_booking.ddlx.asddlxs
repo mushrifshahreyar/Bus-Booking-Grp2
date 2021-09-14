@@ -70,18 +70,21 @@ annotate view ZC_ET1_TAB_BOOKING with
           selectionField: [ { position: 60 } ] }
   @UI.identification : [ { position:50 } ]
   EndDate;
-  //@UI: {  lineItem:       [ { position: 30 } ]}
-  @UI.identification : [ { position:60 } ]
-  TravelFare;
-  @UI: {  lineItem:       [ { position: 70, criticality: 'Criticality' }//,
   
-  // New added metadata
-  //               { type: #FOR_ACTION, dataAction: 'acceptBooking', label: 'Accept Booking'}, 
-  //              { type: #FOR_ACTION, dataAction: 'rejectBooking', label: 'Reject Booking'}
-  ],
-  // ------
-  
-          selectionField: [ { position: 70 } ] }
+//  @UI: {  lineItem:       [ { position: 70, criticality: 'Criticality' },
+//  { type: #FOR_ACTION, dataAction: 'rejectBooking', label: 'Reject Booking', importance: #HIGH }],
+//  //identification: [{position: 70}],
+//  
+//  selectionField: [ { position: 70 } ] }
+
+   @UI: {  lineItem:       [ { position: 70 }
+//                            { type: #FOR_ACTION, dataAction: 'acceptTravel', label: 'Accept Travel' },
+                    //     { type: #FOR_ACTION, dataAction: 'unbooking', label: 'Reject Booking' }
+                          ],
+          identification: [ { position: 70 }
+//                            { type: #FOR_ACTION, dataAction: 'acceptTravel', label: 'Accept Travel' },
+                      //      { type: #FOR_ACTION, dataAction: 'unbooking', label: 'Reject Booking' }
+                          ] } 
   BookingStatus;
   @UI: {  lineItem:       [ { position: 80} ],
           fieldGroup: [{qualifier: 'AdminData', position: 10, importance: #HIGH }]}

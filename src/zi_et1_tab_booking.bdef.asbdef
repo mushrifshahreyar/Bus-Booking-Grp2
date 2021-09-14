@@ -1,7 +1,7 @@
-managed;
+managed implementation in class zbp_i_et1_tab_book unique;
 
 define behavior for ZI_ET1_TAB_BOOKING alias Booking
-implementation in class zbp_i_et1_tab_booking unique
+
 persistent table ZET1_TAB_BOOKING
 lock master
 //authorization master ( instance )
@@ -17,8 +17,8 @@ etag master LastChangedAt
   field ( readonly ) StartDate, EndDate;
   field ( mandatory ) BusId, StartPoint, EndPoint, BusName;
 
-  action (features : instance) acceptBooking result [1] $self;
-  action (features : instance) rejectBooking result [1] $self;
+//  action (features : instance) acceptBooking result [1] $self;
+ // action ( features : instance ) unbooking result [1] $self;
   internal action recalcTotalAmount;
 
   determination calculateBookingID on save { create; }

@@ -7,8 +7,10 @@ use etag
   use create;
   use update;
   use delete;
-
   use association _Passenger { create; }
+
+//  use action acceptBooking;
+  use action unbooking;
 }
 
 define behavior for ZC_ET1_TAB_PASENGER alias Passenger

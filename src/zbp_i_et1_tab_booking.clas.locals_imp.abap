@@ -1,26 +1,19 @@
 CLASS lhc_Booking DEFINITION INHERITING FROM cl_abap_behavior_handler.
-PUBLIC SECTION.
-    INTERFACES:
-      if_oo_adt_classrun.
 
-    CLASS-DATA:
-      out TYPE REF TO if_oo_adt_classrun_out.
-
-
-   PRIVATE SECTION.
+  PRIVATE SECTION.
 
     CONSTANTS:
       BEGIN OF Booking_status,
         Booked    TYPE i VALUE 3,
         Cancelled TYPE i VALUE 1,
-      END OF booking_status.
+      END OF Booking_status.
 
 
     METHODS get_instance_features FOR INSTANCE FEATURES
       IMPORTING keys REQUEST requested_features FOR Booking RESULT result.
 
-    METHODS acceptBooking FOR MODIFY
-      IMPORTING keys FOR ACTION Booking~acceptBooking RESULT result.
+*    METHODS acceptBooking FOR MODIFY
+*      IMPORTING keys FOR ACTION Booking~acceptBooking RESULT result.
 
     METHODS recalcTotalAmount FOR MODIFY
       IMPORTING keys FOR ACTION Booking~recalcTotalAmount.
@@ -37,6 +30,9 @@ PUBLIC SECTION.
     METHODS validateBusDetails FOR VALIDATE ON SAVE
       IMPORTING keys FOR Booking~validateBusDetails.
 
+*    METHODS acceptBooking FOR MODIFY
+*      IMPORTING keys FOR ACTION Booking~acceptBooking RESULT result.
+
 
 
 
@@ -44,23 +40,37 @@ ENDCLASS.
 
 CLASS lhc_Booking IMPLEMENTATION.
 
-  METHOD if_oo_adt_classrun~main.
-    me->out = out.
-  ENDMETHOD.
-
-
-
-
   METHOD get_instance_features.
   ENDMETHOD.
 
-  METHOD acceptBooking.
-  ENDMETHOD.
+
 
   METHOD recalcTotalAmount.
   ENDMETHOD.
 
+
   METHOD rejectBooking.
+*    MODIFY ENTITIES OF zi_et1_tab_booking IN LOCAL MODE
+*      ENTITY Booking
+*         UPDATE
+*           FIELDS ( BookingStatus )
+*           WITH VALUE #( FOR key IN keys
+*                           ( %tky         = key-%tky
+*                             BookingStatus =  'Cancelled'
+*                             Criticality = Booking_status-Cancelled ) )
+*      FAILED failed
+*      REPORTED reported.
+*
+*    " Fill the response table
+*    READ ENTITIES OF zi_et1_tab_booking IN LOCAL MODE
+*      ENTITY Booking
+*        ALL FIELDS WITH CORRESPONDING #( keys )
+*      RESULT DATA(bookings).
+*
+*    result = VALUE #( FOR booking IN bookings
+*                        ( %tky   = booking-%tky
+*                          %param = booking ) ).
+
   ENDMETHOD.
 
   METHOD calculateBookingID.
@@ -107,5 +117,6 @@ CLASS lhc_Booking IMPLEMENTATION.
   METHOD validateBusDetails.
   ENDMETHOD.
 
-
+*METHOD acceptBooking.
+*  ENDMETHOD.
 ENDCLASS.
