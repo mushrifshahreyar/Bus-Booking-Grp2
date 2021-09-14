@@ -12,31 +12,53 @@ define root view entity ZC_ET1_TAB_BOOKING
       @Search.defaultSearchElement: true
       BookingId,
       @Search.defaultSearchElement: true
-      @EndUserText.label: 'Bus Id'
+      @EndUserText.label: 'Bus'
+      @ObjectModel.text.element: ['BusName']
+      @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_ET1_TAB_BUS', element: 'BusId'}, 
+      additionalBinding: [ { localElement: 'StartPoint',    element: 'StartPoint', usage: #RESULT },
+                           { localElement: 'EndPoint',   element: 'EndPoint',   usage: #RESULT},
+                           { localElement: 'StartDate',  element: 'StartDate',        usage: #RESULT },
+                           { localElement: 'EndDate', element: 'EndDate', usage: #RESULT } ]}]
       BusId,
       @Search.defaultSearchElement: true
       @EndUserText.label: 'Bus Name'
-      @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_ET1_TAB_BUS', element: 'BusName'}, 
-      additionalBinding: [ { localElement: 'BusId',    element: 'BusId' },{ localElement: 'StartPoint',    element: 'StartPoint' },
-                                                                 { localElement: 'EndPoint',   element: 'EndPoint',   usage: #RESULT},
-                                                                 { localElement: 'StartDate',  element: 'StartDate',        usage: #RESULT },
-                                                                 { localElement: 'EndDate', element: 'EndDate', usage: #RESULT } ] }]
+      @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_ET1_TAB_BUS', element: 'BusName'},
+      additionalBinding: [ { localElement: 'StartPoint',    element: 'StartPoint', usage: #RESULT },
+                           { localElement: 'EndPoint',   element: 'EndPoint',   usage: #RESULT},
+                           { localElement: 'StartDate',  element: 'StartDate',        usage: #RESULT },
+                           { localElement: 'EndDate', element: 'EndDate', usage: #RESULT } ]}]
       BusName,
       @EndUserText.label: 'From'
       @Search.defaultSearchElement: true
-      @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_ET1_TAB_BUS', element: 'StartPoint'} }]
+      @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_ET1_TAB_BUS', element: 'StartPoint'},
+      additionalBinding: [ { localElement: 'BusId',    element: 'BusId', usage: #RESULT },
+                           { localElement: 'EndPoint',   element: 'EndPoint',   usage: #RESULT},
+                           { localElement: 'StartDate',  element: 'StartDate',        usage: #RESULT },
+                           { localElement: 'EndDate', element: 'EndDate', usage: #RESULT } ] }]
       StartPoint,
       @EndUserText.label: 'To'
       @Search.defaultSearchElement: true
-      @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_ET1_TAB_BUS', element: 'EndPoint'} }]
-     EndPoint,
+      @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_ET1_TAB_BUS', element: 'EndPoint'},
+      additionalBinding: [ { localElement: 'BusId',    element: 'BusId' ,  usage: #RESULT},
+                           { localElement: 'StartPoint',   element: 'StartPoint',   usage: #RESULT},
+                           { localElement: 'StartDate',  element: 'StartDate',        usage: #RESULT },
+                           { localElement: 'EndDate', element: 'EndDate', usage: #RESULT } ]}]
+      EndPoint,
       @Search.defaultSearchElement: true
       @EndUserText.label: 'Start Date'
-      @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_ET1_TAB_BUS', element: 'StartDate'} }]
-     StartDate,
+      @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_ET1_TAB_BUS', element: 'StartDate'},
+      additionalBinding: [ { localElement: 'BusId',    element: 'BusId' ,  usage: #RESULT},
+                           { localElement: 'StartPoint',   element: 'StartPoint',   usage: #RESULT},
+                           { localElement: 'EndPoint',  element: 'EndPoint',        usage: #RESULT },
+                           { localElement: 'EndDate', element: 'EndDate', usage: #RESULT } ] }]
+      StartDate,
       @Search.defaultSearchElement: true
       @EndUserText.label: 'End Date'
-      @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_ET1_TAB_BUS', element: 'EndDate'} }]
+      @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_ET1_TAB_BUS', element: 'EndDate'},
+       additionalBinding: [ { localElement: 'BusId',    element: 'BusId' ,  usage: #RESULT},
+                           { localElement: 'StartPoint',   element: 'StartPoint',   usage: #RESULT},
+                           { localElement: 'EndPoint', element: 'EndPoint', usage: #RESULT },
+                           { localElement: 'StartDate',  element: 'StartDate',        usage: #RESULT } ] }]
       EndDate,
       @EndUserText.label: 'Booking Status'
       @Search.defaultSearchElement: true

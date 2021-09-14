@@ -1,10 +1,26 @@
 @Metadata.layer: #CORE
 @UI: {
-  headerInfo: { 
-                typeNamePlural: 'Passengers'}}
+  headerInfo: { typeName: 'Passenger',
+                typeNamePlural: 'Passengers',
+                title: { type: #STANDARD, label: 'Passenger', value: 'PassengerId' },
+                description:{ value: 'PassengerStatus' } },
+  presentationVariant: [{ sortOrder: [{ by: 'PassengerId', direction:  #DESC }] }] }
 annotate view ZC_ET1_TAB_PASENGER
     with 
 {
+ @UI.facet: [ { label: 'General Information',
+      id: 'GeneralInfo',
+      purpose: #STANDARD,
+      type: #COLLECTION,
+      position: 10
+      },
+      { label: 'Basic Data',
+        id: 'BasicData',
+        purpose: #STANDARD, 
+        parentId: 'GeneralInfo',
+        type: #IDENTIFICATION_REFERENCE,
+        position: 20 
+      }]
     @UI.hidden: true
     PassengerUuid;
     @UI.hidden: true
@@ -13,13 +29,17 @@ annotate view ZC_ET1_TAB_PASENGER
     PassengerId;
     @UI: {  lineItem:       [ { position: 20 } ],
             selectionField: [ { position: 10 } ] }
+     @UI.identification : [ { position:10 } ] 
     FirstName;
     @UI: {  lineItem:       [ { position: 30 } ],
             selectionField: [ { position: 20 } ] }
+    @UI.identification : [ { position:20 } ] 
     LastName;
     @UI.lineItem: [{position: 40 }]
+    @UI.identification : [ { position:20 } ] 
     Age;
     @UI.lineItem: [{position: 50 }]
+    @UI.identification : [ { position:20 } ] 
     ContactNumber;
     @UI.lineItem: [{position: 60, criticality: 'Criticality'}]
     PassengerStatus;

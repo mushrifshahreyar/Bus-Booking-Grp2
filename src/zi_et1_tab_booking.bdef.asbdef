@@ -10,8 +10,10 @@ etag master LastChangedAt
   update;
   delete;
   association _Passenger { create; }
+  //association _Bus;
   field ( numbering : managed, readonly ) BookingUuid;
-
+  field ( readonly ) CreatedAt, CreatedBy, LastChangedAt, LastChangedBy;
+  field ( readonly ) StartDate, EndDate;
    mapping for zet1_tab_booking
   {
     BookingUuid         = booking_uuid;
@@ -31,7 +33,6 @@ lock dependent by _Booking
 //authorization dependent by _Booking
 etag master LastChangedAt
 {
-
   update;
   delete;
   field ( readonly ) BookingUuid;

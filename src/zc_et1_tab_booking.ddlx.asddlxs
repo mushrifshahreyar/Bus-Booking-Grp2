@@ -45,46 +45,49 @@ annotate view ZC_ET1_TAB_BOOKING
     @UI: {  lineItem:       [ { position: 10 } ],
             selectionField: [ { position: 10 } ] }
     BookingId;
-    @UI: {  lineItem:       [ { position: 20 } ]}
+    @UI: {  lineItem:       [ { position: 20 } ], selectionField: [ { position: 20 } ] }
+    @UI.identification : [ { position:10 } ]
+    BusId;
+    @UI.hidden: true
+    @UI: {  lineItem:       [ { position: 30 } ]}
     //@UI.dataPoint: { targetValueElement: 'BusName', title: 'Bus Name' }
     @UI.identification : [ { position:10 } ]
-     @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_ET1_TAB_BUS', element: 'BusName'} }]
     BusName;
     @UI: {  lineItem:       [ { position: 30 } ],
-            selectionField: [ { position: 20 } ] }
+            selectionField: [ { position: 30 } ] }
     //@UI.dataPoint: { targetValueElement: 'StartPoint', title: 'From' } 
     @UI.identification : [ { position:20 } ]       
     StartPoint;
     @UI: {  lineItem:       [ { position: 40 } ],
-            selectionField: [ { position: 30 } ] }
+            selectionField: [ { position: 40 } ] }
     //@UI.dataPoint: { targetValueElement: 'EndPoint', title: 'To' }
     @UI.identification : [ { position:30 } ]
     EndPoint;
     @UI: {  lineItem:       [ { position: 50 } ],
-            selectionField: [ { position: 40 } ] }
+            selectionField: [ { position: 50 } ] }
     @UI.identification : [ { position:40 } ]        
     StartDate;
     @UI: {  lineItem:       [ { position: 60 } ],
-            selectionField: [ { position: 50 } ] }
+            selectionField: [ { position: 60 } ] }
     @UI.identification : [ { position:50 } ]        
     EndDate;
     @UI: {  lineItem:       [ { position: 70, criticality: 'Criticality' } ],
-            selectionField: [ { position: 60 } ] }
+            selectionField: [ { position: 70 } ] }
     BookingStatus;
     @UI: {  lineItem:       [ { position: 80} ], 
             fieldGroup: [{qualifier: 'AdminData', position: 10, importance: #HIGH }]}
-   
+    @UI.hidden: true
     CreatedBy;
     @UI: {  lineItem:       [ { position: 90 } ],
             fieldGroup: [{qualifier: 'AdminData', position: 20, importance: #HIGH }]}
-    
+    @UI.hidden: true
     CreatedAt;
     @UI: {  lineItem:       [ { position: 100 } ],
             fieldGroup: [{qualifier: 'AdminData', position: 30, importance: #HIGH }]}
-   
+    @UI.hidden: true
     LastChangedBy;
     @UI: {  lineItem:       [ { position: 110 } ],
             fieldGroup: [{qualifier: 'AdminData', position: 40, importance: #HIGH }]}
-   
+    @UI.hidden: true
     LastChangedAt;
 }
