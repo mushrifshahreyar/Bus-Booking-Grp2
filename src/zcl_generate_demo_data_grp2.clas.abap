@@ -27,7 +27,7 @@ CLASS zcl_generate_demo_data_grp2 IMPLEMENTATION.
 
 *   fill internal travel table (itab)
     itab = VALUE #(
-      ( booking_uuid = '02D5290E594C1EDA93815057FD949924' booking_id = '00000002' bus_id = '0701' booking_status = 'Booked' created_by = 'ALIFIYA'
+      ( booking_uuid = '02D5290E594C1EDA93815057FD949924' booking_id = '0001' bus_id = '0701' booking_status = 'Booked' created_by = 'ALIFIYA'
 created_at = '20210922184530' last_changed_by = 'ALIFIYA' last_changed_at = '20210922184530' )
     ).
 
@@ -48,8 +48,10 @@ created_by = 'ALIFIYA' created_at = '20210922184530' last_changed_by = 'ALIFIYA'
     itab2 = VALUE #(
       ( bus_uuid = '02D5290E594C1EDA90815057FD949930' bus_id = '0701' bus_name = 'Parveen Travels' bus_capacity = '30' start_point = 'Mumbai' end_point = 'Bangalore' start_date = '20210921184530' end_date = '20210922184530' seats_left = '10'
 total_waitlist = '0' )
-         ( bus_uuid = '02D5290E594C1EDA90815057FD967930' bus_id = '0702' bus_name = 'Arveen Travels' bus_capacity = '30' start_point = 'Bangalore' end_point = 'Mumbai' start_date = '20210921184530' end_date = '20210922184530' seats_left = '10'
+      ( bus_uuid = '02D5290E594C1EDA90815057FD967930' bus_id = '0702' bus_name = 'Arveen Travels' bus_capacity = '30' start_point = 'Bangalore' end_point = 'Mumbai' start_date = '20210921184530' end_date = '20210922184530' seats_left = '10'
 total_waitlist = '0' )
+      ( bus_uuid = '02D5290E594C1EFA90815057FD968930' bus_id = '0703' bus_name = 'Teen Travels' bus_capacity = '30' start_point = 'Bangalore' end_point = 'Mumbai' start_date = '20210921184530' end_date = '20210922184530' seats_left = '0'
+total_waitlist = '11' )
 
     ).
 

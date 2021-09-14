@@ -1,6 +1,7 @@
-managed ;//implementation in class zbp_i_et1_tab_booking unique;
+managed;
 
 define behavior for ZI_ET1_TAB_BOOKING alias Booking
+implementation in class zbp_i_et1_tab_booking unique
 persistent table ZET1_TAB_BOOKING
 lock master
 //authorization master ( instance )
@@ -14,12 +15,24 @@ etag master LastChangedAt
   field ( numbering : managed, readonly ) BookingUuid;
   field ( readonly ) CreatedAt, CreatedBy, LastChangedAt, LastChangedBy;
   field ( readonly ) StartDate, EndDate;
+  field ( mandatory ) BusId, StartPoint, EndPoint, BusName;
+
+  action (features : instance) acceptBooking result [1] $self;
+  action (features : instance) rejectBooking result [1] $self;
+  internal action recalcTotalAmount;
+
+  determination calculateBookingID on save { create; }
+
+  determination setBookingStatus on save {create;}
+
+  validation validateBusDetails on save { field BusId, StartPoint, EndPoint; create; }
+
    mapping for zet1_tab_booking
   {
-    BookingUuid         = booking_uuid;
+    BookingUuid        = booking_uuid;
     BookingId          = booking_id;
-    BusId           = bus_id;
-    BookingStatus         = booking_status;
+    BusId              = bus_id;
+    BookingStatus      = booking_status;
     CreatedBy          = created_by;
     CreatedAt          = created_at;
     LastChangedBy      = last_changed_by;
@@ -28,6 +41,7 @@ etag master LastChangedAt
 }
 
 define behavior for ZI_ET1_TAB_PASENGER alias Passenger
+implementation in class zbp_i_et1_tab_passenger unique
 persistent table ZET1_TAB_PASENGR
 lock dependent by _Booking
 //authorization dependent by _Booking
@@ -38,6 +52,12 @@ etag master LastChangedAt
   field ( readonly ) BookingUuid;
   association _Booking;
   field ( numbering : managed, readonly ) PassengerUuid;
+  field ( mandatory ) FirstName;
+
+  determination calculatePassengerID on modify { create; }
+  determination calculatePassenerStatus on modify { create; }
+
+
    mapping for zet1_tab_pasengr
   {
     PassengerUuid      = passenger_uuid;

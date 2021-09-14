@@ -18,4 +18,5 @@ use etag
   use delete;
 
   use association _Booking;
+
 }
