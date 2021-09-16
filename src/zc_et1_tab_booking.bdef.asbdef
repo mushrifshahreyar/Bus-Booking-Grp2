@@ -21,4 +21,6 @@ use etag
 
   use association _Booking;
 
+  use action cancellation;
+
 }

@@ -17,6 +17,7 @@ association [0..1] to ZI_ET1_TAB_BUS as _Bus on $projection.BusId = _Bus.BusId
     _Bus.BusName,
     _Bus.StartPoint,
     _Bus.EndPoint,
+    _Bus.TravelFare,
     _Bus.StartDate,
     _Bus.EndDate,
     @Semantics.user.createdBy: true

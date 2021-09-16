@@ -2,7 +2,7 @@
 @UI: {
   headerInfo: { typeName: 'Passenger Details',
                 typeNamePlural: 'Bookings',
-                title: { type: #STANDARD, label: 'Booking', value: 'BookingId' },
+                title: { type: #STANDARD, label: 'Booking', value : 'BookingId' },
                 description:{ value: 'BookingStatus' } },
   presentationVariant: [{ sortOrder: [{ by: 'BookingId', direction:  #DESC }] }] }
 annotate view ZC_ET1_TAB_BOOKING with
@@ -52,40 +52,35 @@ annotate view ZC_ET1_TAB_BOOKING with
   //@UI.dataPoint: { targetValueElement: 'BusName', title: 'Bus Name' }
   @UI.identification : [ { position:10 } ]
   BusName;
-  @UI: {  lineItem:       [ { position: 30 } ],
+  @UI: {  lineItem:       [ { position: 40 } ],
           selectionField: [ { position: 30 } ] }
   //@UI.dataPoint: { targetValueElement: 'StartPoint', title: 'From' }
   @UI.identification : [ { position:20 } ]
   StartPoint;
-  @UI: {  lineItem:       [ { position: 40 } ],
+  @UI: {  lineItem:       [ { position: 50 } ],
           selectionField: [ { position: 40 } ] }
   //@UI.dataPoint: { targetValueElement: 'EndPoint', title: 'To' }
   @UI.identification : [ { position:30 } ]
   EndPoint;
-  @UI: {  lineItem:       [ { position: 50 } ],
+  @UI: {  lineItem:       [ { position: 60 } ],
           selectionField: [ { position: 50 } ] }
   @UI.identification : [ { position:40 } ]
   StartDate;
-  @UI: {  lineItem:       [ { position: 60 } ],
+  @UI: {  lineItem:       [ { position: 70 } ],
           selectionField: [ { position: 60 } ] }
   @UI.identification : [ { position:50 } ]
   EndDate;
   
-//  @UI: {  lineItem:       [ { position: 70, criticality: 'Criticality' },
-//  { type: #FOR_ACTION, dataAction: 'rejectBooking', label: 'Reject Booking', importance: #HIGH }],
-//  //identification: [{position: 70}],
-//  
-//  selectionField: [ { position: 70 } ] }
+  @UI: {  lineItem:       [ { position: 20, criticality: 'Criticality' },
+  { type: #FOR_ACTION, dataAction: 'unbooking', label: 'Cancel Booking' }],
+          identification: [
+          { type: #FOR_ACTION, dataAction: 'unbooking', label: 'Cancel Booking' }],
+          selectionField: [ { position: 70 } ] }
 
-   @UI: {  lineItem:       [ { position: 70 }
-//                            { type: #FOR_ACTION, dataAction: 'acceptTravel', label: 'Accept Travel' },
-                    //     { type: #FOR_ACTION, dataAction: 'unbooking', label: 'Reject Booking' }
-                          ],
-          identification: [ { position: 70 }
-//                            { type: #FOR_ACTION, dataAction: 'acceptTravel', label: 'Accept Travel' },
-                      //      { type: #FOR_ACTION, dataAction: 'unbooking', label: 'Reject Booking' }
-                          ] } 
   BookingStatus;
+   @UI: {  lineItem:       [ { position: 80 } ] }
+  @UI.identification : [ { position:60 } ]
+  TravelFare;
   @UI: {  lineItem:       [ { position: 80} ],
           fieldGroup: [{qualifier: 'AdminData', position: 10, importance: #HIGH }]}
   @UI.hidden: true

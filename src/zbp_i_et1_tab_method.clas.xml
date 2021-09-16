@@ -3,15 +3,13 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <VSEOCLASS>
-    <CLSNAME>ZBP_I_ET1_TAB_BOOK</CLSNAME>
+    <CLSNAME>ZBP_I_ET1_TAB_METHOD</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>Behavior Implementation for ZI_ET1_TAB_BOOKING</DESCRIPT>
-    <CATEGORY>06</CATEGORY>
+    <DESCRIPT>Class for updating database</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>
     <UNICODE>X</UNICODE>
-    <CLSDEFINT>ZI_ET1_TAB_BOOKING</CLSDEFINT>
    </VSEOCLASS>
   </asx:values>
  </asx:abap>

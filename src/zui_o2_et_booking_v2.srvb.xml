@@ -4,9 +4,9 @@
   <asx:values>
    <SRVB>
     <METADATA>
-     <NAME>ZUI_O2_ET1_BOOKING1</NAME>
+     <NAME>ZUI_O2_ET_BOOKING_V2</NAME>
      <TYPE>SRVB/SVB</TYPE>
-     <DESCRIPTION>AMRITA SERV BINDING</DESCRIPTION>
+     <DESCRIPTION>Service binding for booking v2</DESCRIPTION>
      <LANGUAGE>EN</LANGUAGE>
      <LINKS>
       <item>
@@ -15,7 +15,7 @@
        <TITLE>Historic versions</TITLE>
       </item>
       <item>
-       <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_ET1_BOOKING1</HREF>
+       <HREF>/sap/bc/adt/businessservices/odatav2/ZUI_O2_ET_BOOKING_V2</HREF>
        <REL>http://www.sap.com/categories/odatav2</REL>
        <TYPE>application/vnd.sap.adt.businessservices.odatav2.v2+xml</TYPE>
        <TITLE>ODATAV2</TITLE>
@@ -37,20 +37,20 @@
     </METADATA>
     <CONTENT>
      <BIND_TYPE_IMPL>
-      <NAME>ZUI_O2_ET1_BOOKING1</NAME>
+      <NAME>ZUI_O2_ET_BOOKING_V2</NAME>
      </BIND_TYPE_IMPL>
      <BIND_TYPE>ODATA</BIND_TYPE>
      <BIND_TYPE_VERSION>V2</BIND_TYPE_VERSION>
      <SERVICES>
       <item>
-       <SERVICE_NAME>ZUI_O2_ET1_BOOKING1</SERVICE_NAME>
+       <SERVICE_NAME>ZUI_O2_ET_BOOKING_V2</SERVICE_NAME>
        <SERVICE_CONTENT>
         <item>
          <SERVICE_VERSION>0001</SERVICE_VERSION>
          <SRVD_REF>
-          <URI>/sap/bc/adt/ddic/srvd/sources/zui_et1_booking1</URI>
+          <URI>/sap/bc/adt/ddic/srvd/sources/zui_et1_booking</URI>
           <TYPE>SRVD/SRV</TYPE>
-          <NAME>ZUI_ET1_BOOKING1</NAME>
+          <NAME>ZUI_ET1_BOOKING</NAME>
          </SRVD_REF>
         </item>
        </SERVICE_CONTENT>

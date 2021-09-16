@@ -50,8 +50,8 @@ created_by = 'ALIFIYA' created_at = '20210922184530' last_changed_by = 'ALIFIYA'
 total_waitlist = '0' )
       ( bus_uuid = '02D5290E594C1EDA90815057FD967930' bus_id = '0702' bus_name = 'Arveen Travels' bus_capacity = '30' start_point = 'Bangalore' end_point = 'Mumbai' start_date = '20210921184530' end_date = '20210922184530' seats_left = '10'
 total_waitlist = '0' )
-      ( bus_uuid = '02D5290E594C1EFA90815057FD968930' bus_id = '0703' bus_name = 'Teen Travels' bus_capacity = '30' start_point = 'Bangalore' end_point = 'Mumbai' start_date = '20210921184530' end_date = '20210922184530' seats_left = '0'
-total_waitlist = '11' )
+      ( bus_uuid = '02D5290E594C1EFA90815057FD968930' bus_id = '0703' bus_name = 'Teen Travels' bus_capacity = '30' start_point = 'Bangalore' end_point = 'Mumbai' start_date = '20210921184530' end_date = '20210922184530' seats_left = '1'
+total_waitlist = '0' )
 
     ).
 

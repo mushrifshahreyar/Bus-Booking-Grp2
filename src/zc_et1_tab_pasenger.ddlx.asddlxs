@@ -43,7 +43,8 @@ annotate view ZC_ET1_TAB_PASENGER
     ContactNumber;
     @UI.lineItem: [{position: 60, criticality: 'Criticality'}]
     PassengerStatus;
-    @UI.lineItem: [{position: 70 }]
+    @UI.lineItem: [{position: 70 }, {  type: #FOR_ACTION, dataAction: 'cancellation', label: 'Cancel Ticket' } ]
+    @UI.identification: [{position:70 },  { type: #FOR_ACTION, dataAction: 'cancellation', label: 'Cancel Ticket' }]
     WaitlistNumber;
     @UI.lineItem: [{position: 80 }]
     @UI.hidden: true

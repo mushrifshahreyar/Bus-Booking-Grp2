@@ -16,24 +16,24 @@ define root view entity ZC_ET1_TAB_BOOKING
       @ObjectModel.text.element: ['BusName']
       @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_ET1_TAB_BUS', element: 'BusId'}, 
       additionalBinding: [ { localElement: 'StartPoint',    element: 'StartPoint', usage: #RESULT },
-                           { localElement: 'EndPoint',   element: 'EndPoint',   usage: #RESULT},
-                           { localElement: 'StartDate',  element: 'StartDate',        usage: #RESULT },
+                           { localElement: 'EndPoint',   element: 'EndPoint', usage: #RESULT},
+                           { localElement: 'StartDate',  element: 'StartDate', usage: #RESULT },
                            { localElement: 'EndDate', element: 'EndDate', usage: #RESULT } ]}]
       BusId,
       @Search.defaultSearchElement: true
       @EndUserText.label: 'Bus Name'
       @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_ET1_TAB_BUS', element: 'BusName'},
       additionalBinding: [ { localElement: 'StartPoint',    element: 'StartPoint', usage: #RESULT },
-                           { localElement: 'EndPoint',   element: 'EndPoint',   usage: #RESULT},
-                           { localElement: 'StartDate',  element: 'StartDate',        usage: #RESULT },
+                           { localElement: 'EndPoint',   element: 'EndPoint', usage: #RESULT},
+                           { localElement: 'StartDate',  element: 'StartDate', usage: #RESULT },
                            { localElement: 'EndDate', element: 'EndDate', usage: #RESULT } ]}]
       BusName,
       @EndUserText.label: 'From'
       @Search.defaultSearchElement: true
       @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_ET1_TAB_BUS', element: 'StartPoint'},
       additionalBinding: [ { localElement: 'BusId',    element: 'BusId', usage: #RESULT },
-                           { localElement: 'EndPoint',   element: 'EndPoint',   usage: #RESULT},
-                           { localElement: 'StartDate',  element: 'StartDate',        usage: #RESULT },
+                           { localElement: 'EndPoint',   element: 'EndPoint', usage: #RESULT},
+                           { localElement: 'StartDate',  element: 'StartDate', usage: #RESULT },
                            { localElement: 'EndDate', element: 'EndDate', usage: #RESULT } ] }]
       StartPoint,
       @EndUserText.label: 'To'
@@ -60,6 +60,9 @@ define root view entity ZC_ET1_TAB_BOOKING
                            { localElement: 'EndPoint', element: 'EndPoint', usage: #RESULT },
                            { localElement: 'StartDate',  element: 'StartDate',        usage: #RESULT } ] }]
       EndDate,
+      @EndUserText.label: 'Travel Amount'
+      @Search.defaultSearchElement: true
+      TravelFare,
       @EndUserText.label: 'Booking Status'
       @Search.defaultSearchElement: true
       BookingStatus,

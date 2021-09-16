@@ -13,7 +13,7 @@ association to parent ZI_ET1_TAB_BOOKING as _Booking on $projection.BookingUuid 
     passenger_status as PassengerStatus,
      case passenger_status
            when 'Confirmed' then 3 
-           when 'In waitlist' then 0   
+           when 'In Waitlist' then 2  
            when 'Cancelled' then 1       
           else 0
       end as Criticality,
